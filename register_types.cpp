@@ -6,10 +6,9 @@
 
 void register_leg_ik_types() {
 	_leg_ik = memnew(_LegIK);
-
-	//ObjectTypeDB::register_type<LegIKController>();
-
 	Globals::get_singleton()->add_singleton(Globals::Singleton("LegIK", _LegIK::get_singleton()));
+
+	ObjectTypeDB::register_type<LegIKController>();
 }
 void unregister_leg_ik_types() {
 	memdelete(_leg_ik);
